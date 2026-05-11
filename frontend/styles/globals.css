@@ -1,0 +1,274 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ─── BQD Design System ──────────────────────────────────────────────────── */
+
+.font-condensed {
+  font-family: "Barlow Condensed", sans-serif;
+}
+
+/* Buttons */
+.bqd-btn-primary {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: #c17f3a;
+  color: #1a1208;
+  border: none;
+  border-radius: 2px;
+  padding: 10px 24px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.bqd-btn-primary:hover {
+  background: #d4923f;
+}
+.bqd-btn-primary:active {
+  transform: scale(0.97);
+}
+
+.bqd-btn-ghost {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: transparent;
+  color: #8a7a6a;
+  border: 1px solid #3d3028;
+  border-radius: 2px;
+  padding: 6px 14px;
+  cursor: pointer;
+  transition:
+    color 0.15s,
+    border-color 0.15s;
+}
+.bqd-btn-ghost:hover {
+  color: #f0ebe3;
+  border-color: #8a7a6a;
+}
+
+.bqd-btn-danger {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: transparent;
+  color: #b85c3a;
+  border: 1px solid #4d2f22;
+  border-radius: 2px;
+  padding: 6px 14px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.bqd-btn-danger:hover {
+  background: rgba(184, 92, 58, 0.12);
+}
+
+.bqd-btn-login {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: transparent;
+  color: #c17f3a;
+  border: 1px solid #4d3020;
+  border-radius: 2px;
+  padding: 6px 14px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.bqd-btn-login:hover {
+  background: rgba(193, 127, 58, 0.1);
+}
+
+/* Section heading */
+.bqd-section-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.bqd-section-num {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #c17f3a;
+}
+.bqd-section-title {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #2a2118;
+}
+.bqd-section-rule {
+  flex: 1;
+  height: 1px;
+  background: #d4c8b8;
+}
+
+/* Feature card */
+.bqd-feat-card {
+  background: #e8e0d5;
+  border: 1px solid #d4c8b8;
+  border-top: 3px solid #2a2118;
+  padding: 22px 20px;
+  transition:
+    border-top-color 0.2s,
+    transform 0.2s;
+  cursor: default;
+}
+.bqd-feat-card:hover {
+  border-top-color: #c17f3a;
+  transform: translateY(-2px);
+}
+
+/* Table row hover */
+.bqd-log-row:hover td {
+  background: #ece4d8;
+}
+
+/* Badges */
+.bqd-badge {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 2px;
+  display: inline-block;
+}
+.bqd-badge--pass {
+  background: #d4e8c8;
+  color: #2a5218;
+}
+.bqd-badge--fail {
+  background: #f0d0c0;
+  color: #6a2010;
+}
+.bqd-badge--review {
+  background: #f0e0b0;
+  color: #6a4a10;
+}
+
+/* Modal */
+.bqd-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(26, 18, 8, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+.bqd-modal {
+  background: #f0ebe3;
+  border: 1px solid #d4c8b8;
+  border-top: 3px solid #c17f3a;
+  border-radius: 2px;
+  padding: 32px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Sidebar radio items */
+.bqd-radio-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  cursor: pointer;
+  transition:
+    background 0.15s,
+    border-color 0.15s;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #6a5a4a;
+}
+.bqd-radio-item:hover {
+  background: #ddd5c8;
+  border-color: #c8bca8;
+}
+.bqd-radio-item--active {
+  background: #2a2118;
+  color: #f0ebe3;
+  border-color: #c17f3a;
+}
+.bqd-radio-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #c8bca8;
+  flex-shrink: 0;
+  transition: background 0.15s;
+}
+
+/* Form input */
+.bqd-input {
+  font-family: "Barlow", sans-serif;
+  font-size: 13px;
+  background: #e8e0d5;
+  border: 1px solid #c8bca8;
+  border-radius: 2px;
+  padding: 8px 12px;
+  color: #2a2118;
+  outline: none;
+  transition: border-color 0.15s;
+  width: 100%;
+}
+.bqd-input:focus {
+  border-color: #c17f3a;
+}
+.bqd-input::placeholder {
+  color: #8a7a6a;
+}
+
+/* Drop zone */
+.bqd-dropzone {
+  border: 1.5px dashed #c8bca8;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e8e0d5;
+  transition: border-color 0.15s;
+}
+.bqd-dropzone:hover {
+  border-color: #c17f3a;
+}
